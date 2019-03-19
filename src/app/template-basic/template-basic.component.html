@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+
+<div *ngFor="let student of students">
+  <span *ngIf="student === anuj ; else localtemplate"> I am {{student}} inside predefined template</span>
+  <ng-template #localtemplate></ng-template>
+</div>
