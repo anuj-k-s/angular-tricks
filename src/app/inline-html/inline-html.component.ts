@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { stringify } from '@angular/core/src/render3/util';
+import { error } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-inline-html',
@@ -49,9 +52,13 @@ export class InlineHtmlComponent implements OnInit {
 
   cars = { AlfaRomeo: 'Stelvio', AstonMartin : 'DB9' , Buggati : 'Veron' , Dodge : 'Viper'};
   students = ['anuj', 'ankit', 'ram', 'lakshman'];
-  constructor() { }
-
+  constructor(private httpclient: HttpClient) {
+   }
+   configurl = 'abc';
   ngOnInit() {
+    this.httpclient.get(this.configurl).subscribe(
+      data => console.log(data),
+      error => console.log(error)
+    );
   }
- 
 }
