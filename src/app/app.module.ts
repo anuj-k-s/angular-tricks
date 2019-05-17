@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { InlineHtmlComponent } from './inline-html/inline-html.component';
 import { TemplateBasicComponent } from './template-basic/template-basic.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Java8Component } from './java8/java8.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InlineHtmlComponent,
-    TemplateBasicComponent
+    TemplateBasicComponent,
+    Java8Component
   ],
   imports: [
     BrowserModule,
