@@ -1,0 +1,29 @@
+<p>
+  data-table works!
+</p>
+<div class = "row">
+
+    <div class = "col-md-1">FirstName</div>
+    <div class = "col-md-1">LastName</div>
+    <div class = "col-md-2">EmailId</div>
+    <div class = "col-md-2">Booth1</div>
+    <div class = "col-md-2">Booth2</div>
+    <div class = "col-md-2">Booth3</div>
+    <div class = "col-md-2">Total</div>
+
+</div>
+<div class="row" *ngFor="let participant of participantSource">
+    <div class = "col-md-1">{{participant.firstName}}</div>
+    <div class = "col-md-1">{{participant.lastName}}</div>
+    <div class = "col-md-2">{{participant.emailId}}</div>
+    <div class = "col-md-2">
+      <input type="number" [(ngModel)]="participant.booth1">
+    </div>
+    <div class = "col-md-2">
+        <input type="number" [(ngModel)]="participant.booth2">
+    </div>
+    <div class = "col-md-2">
+        <input type="number" [(ngModel)]="participant.booth3">
+    </div>
+    <div class = "col-md-2">{{participant.booth1+participant.booth2+participant.booth3}}</div>
+</div>

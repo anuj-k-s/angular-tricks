@@ -8,6 +8,9 @@ import { TemplateBasicComponent } from './template-basic/template-basic.componen
 import { HttpClientModule } from '@angular/common/http';
 import { Java8Component } from './java8/java8.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { DropDownDirective } from './directive/dropdown.directive';
+import { DataTableComponent } from './data-table/data-table.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +18,18 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
     InlineHtmlComponent,
     TemplateBasicComponent,
     Java8Component,
-    NavigationBarComponent
+    NavigationBarComponent,
+    DropDownDirective,
+    DataTableComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

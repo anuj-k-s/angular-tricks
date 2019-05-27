@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Java8Component implements OnInit {
 
+  isCollapsed = true;
+
   constructor() { }
 
   ngOnInit() {
   }
-
+  
 }
