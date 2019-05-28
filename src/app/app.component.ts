@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tips';
+  public flag = false;
+  constructor() {
+    setTimeout(() => {
+      this.flag = true;
+    }, 2000);
+  }
 }
