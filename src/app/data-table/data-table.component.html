@@ -1,0 +1,42 @@
+<table class="table table-dark table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">
+        <input type="text" (keyup)="search($event.target.value,'FN')">
+      </th>
+      <th scope="col">
+        <input type="text" (keyup)="search($event.target.value,'LN')">
+      </th>
+      <th scope="col">
+        <input type="text" (keyup)="search($event.target.value,'EId')">
+      </th>
+    </tr>
+    <tr>
+      <th scope="col">FirstName</th>
+      <th scope="col">LastName</th>
+      <th scope="col">EMailId</th>
+      <th scope="col">Booth1</th>
+      <th scope="col">Booth2</th>
+      <th scope="col">Booth3</th>
+      <th scope="col">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr scope="row" *ngFor="let participant of filterData">
+      <td>{{participant.firstName}}</td>
+      <td>{{participant.lastName}}</td>
+      <td>{{participant.emailId}}</td>
+      <td>
+        <input type="number" [(ngModel)]="participant.booth1">
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="participant.booth2">
+      </td>
+      <td>
+        <input type="number" [(ngModel)]="participant.booth3">
+      </td>
+      <td>{{participant.booth1+participant.booth2+participant.booth3}}</td>
+    </tr>
+  </tbody>
+</table>
+{{filterData|json}}

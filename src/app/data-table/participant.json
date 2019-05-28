@@ -1,0 +1,24 @@
+{
+    "participants": [
+        {
+            "firstName": "Anuj",
+            "lastName": "Soni",
+            "emailId": "anujkumarsoni1993@gmail.com"
+        },
+        {
+            "firstName": "Anki",
+            "lastName": "Soni",
+            "emailId": "ayx@gmail.com"
+        },
+        {
+            "firstName": "Ram",
+            "lastName": "Soni",
+            "emailId": "byx@gmail.com"
+        },
+        {
+            "firstName": "Jagga",
+            "lastName": "Soni",
+            "emailId": "jagga@gmail.com"
+        }
+    ]
+}
