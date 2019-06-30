@@ -10,6 +10,7 @@ import { Participants } from './participants.dto';
 })
 export class DataTableComponent implements OnInit {
   public participantSource: Array<Participants> = new Array<Participants>();
+  public filterData: Array<Participants> = new Array<Participants>();
   constructor(private dataTableService: DataTableService) { }
 
   ngOnInit() {
@@ -25,12 +26,31 @@ export class DataTableComponent implements OnInit {
   }
 
   successCallBack(backendList) {
-    debugger;
     for (const participant of backendList.participants) {
       let cand = new Participants();
       cand.populateData(participant.firstName, participant.lastName, participant.emailId);
       this.participantSource.push(cand);
+    }
+    this.filterData = this.participantSource;
+  }
 
+  search(term: string, filterBy: string) {
+    debugger;
+    if (term == "" && this.filterData.length == 0) {
+      this.filterData = this.participantSource;
+    } else {
+      if (filterBy === 'FN' && term != "") {
+        this.filterData = this.filterData.filter(x =>
+          x.firstName.trim().toLowerCase().includes(term.trim().toLowerCase())
+        );
+      } else if (filterBy === 'LN' && term != "") {
+        this.filterData = this.filterData.filter(x =>
+          x.lastName.trim().toLowerCase().includes(term.trim().toLowerCase()));
+      } else if (filterBy === 'EId' && term != "") {
+        this.filterData = this.filterData.filter(x =>
+          x.emailId.trim().toLowerCase().includes(term.trim().toLowerCase()));
+      }
     }
   }
 }
+
