@@ -1,5 +1,5 @@
 <!-- <div class="btn-group" id="buttonShow">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+  <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"
     (click)="buttonShow = !buttonShow">
     Manage
     <span class="caret"></span></button>
@@ -10,21 +10,17 @@
   </ul>
 </div> -->
 
-
-
-
-
-  <div class="card">
+<div class="accordion" id="accordionExample">
+    <div class="card">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
-        <button class="btn btn-primary text-left" type="button" (click)="headingOne = !headingOne">
+        <button class="btn btn-link text-left" type="button" (click)="headingOne = !headingOne">
           Java 8 features
         </button>
       </h5>
     </div>
     <div [ngClass]="{'show': headingOne}" class="collapse">
       <div class="card-body">
-
         <ul class="list-group-item-info">
           <p>Java 8 ships with several new features but the most significant are the following:</p>
 
@@ -53,7 +49,7 @@
 
     <div class="card-header">
       <h5 class="mb-0">
-        <button class="btn btn-primary text-left" type="button" (click)="headingTwo = !headingTwo">
+        <button class="btn btn-link text-left" type="button" (click)="headingTwo = !headingTwo">
           What is a functional interface? What are the rules of defining a functional interface?
         </button>
       </h5>
@@ -83,7 +79,7 @@
 
     <div class="card-header">
       <h5 class="mb-0">
-        <button class="btn btn-primary text-left" type="button" (click)="headingThree = !headingThree">
+        <button class="btn btn-link text-left" type="button" (click)="headingThree = !headingThree">
           What is the difference between Collection and Stream?
         </button>
       </h5>
@@ -103,7 +99,7 @@
 
     <div class="card-header">
       <h5 class="mb-0">
-        <button class="btn btn-primary text-left" type="button" (click)="four = !four">
+        <button class="btn btn-link text-left" type="button" (click)="four = !four">
           What does flatmap() function do? why you need it?
         </button>
       </h5>
@@ -125,7 +121,7 @@
 
     <div class="card-header">
       <h5 class="mb-0">
-        <button class="btn btn-primary text-left" type="button" (click)="five = !five">
+        <button class="btn btn-link text-left" type="button" (click)="five = !five">
           What is difference between findFirst() and findAny() method?
         </button>
       </h5>
@@ -144,7 +140,7 @@
 
     <div class="card-header">
       <h5 class="mb-0">
-        <button class="btn btn-primary text-left" type="button" (click)="six = !six">
+        <button class="btn btn-link text-left" type="button" (click)="six = !six">
           What is the parallel Stream? How can you get a parallel stream from a List?
         </button>
       </h5>
@@ -166,8 +162,29 @@
         </ul>
       </div>
     </div>
-  </div>
 
+    <div class="card-header">
+        <h5 class="mb-0">
+          <button class="btn btn-link text-left" type="button" (click)="seven = !seven">
+            What is the contract between hashCode() and equals() method
+          </button>
+        </h5>
+      </div>
+      <div [ngClass]="{'show': seven}" class="collapse">
+        <div class="card-body">
+          <ul class="list-group-item-info">
+            <p>
+                1) If two objects are equal, then they must have the same hash code.<br>
+                2) If two objects have the same hash code, they may or may not be equal.
+              </p>
+          </ul>
+        </div>
+      </div>
+
+
+ 
+</div>
+</div>
 
 
 <p>This is the <code>Panel</code> constructor:</p>
