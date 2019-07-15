@@ -6,6 +6,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { DataTableComponent } from './data-table/data-table.component';
 
 const routes: Routes = [
+  // {path:'',pathMatch:'full',redirectTo:'java8'},
   {path : 'basic-template' , component : TemplateBasicComponent},
   {path : 'java8' , component : Java8Component},
   {path : 'navbar' , component : NavigationBarComponent},

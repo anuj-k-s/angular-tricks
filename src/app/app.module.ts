@@ -10,6 +10,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DropDownDirective } from './directive/dropdown.directive';
 import { DataTableComponent } from './data-table/data-table.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DataTableComponent } from './data-table/data-table.component';
     Java8Component,
     NavigationBarComponent,
     DropDownDirective,
-    DataTableComponent
+    DataTableComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
