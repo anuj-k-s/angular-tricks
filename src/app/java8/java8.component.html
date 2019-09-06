@@ -11,181 +11,345 @@
 </div> -->
 
 <div class="accordion" id="accordionExample">
-    <div class="card">
+  <div class="card">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
-        <button class="btn btn-link text-left" type="button" (click)="headingOne = !headingOne">
+        <button
+          class="btn btn-link text-left"
+          type="button"
+          (click)="headingOne = !headingOne"
+        >
           Java 8 features
         </button>
       </h5>
     </div>
-    <div [ngClass]="{'show': headingOne}" class="collapse">
+    <div [ngClass]="{ show: headingOne }" class="collapse">
       <div class="card-body">
         <ul class="list-group-item-info">
-          <p>Java 8 ships with several new features but the most significant are the following:</p>
+          <p>
+            Java 8 ships with several new features but the most significant are
+            the following:
+          </p>
+          <li>
+            forEach() method in Iterable interface
+          </li>
+          <pre>
+          <code>
+            Seperation Of Concerns is achieved by seperating iteration from buisness logic
 
-          <li>Lambda Expressions − a new language feature allowing treating actions as objects</li>
-          <li> Method References − enable defining Lambda Expressions by referring to methods directly using their
-            names
+            //Iteration
+            MyConsumer action = new MyConsumer();
+            list.forEach(action);
+
+            //Buisness Logic
+            public class MyConsumer implements Consumer {{'{'}}
+                @Override
+                public void accept(Integer t){{'{'}}
+                  System.out.println(t);
+                {{'}'}}
+              {{'}'}}
+          </code>
+          </pre>
+          <li>Java 8 Interface Changes – static method, default method</li>
+          <b>Java Interface Default Method</b>
+          <b>Java Interface Static Method</b>
+
+          <li>
+              Difference between Abstract class vs Interface  in Java 8
+              <ul>
+                <li>
+                    Abstract classes are classes, so they are not restricted to other restrictions of the interface in Java e.g. abstract class can have the state, but you cannot have the state on the interface in Java.
+                </li>
+                <li>
+                    Another semantic difference between interface with default methods and abstract class is that you can define constructors inside an abstract class, but you cannot define constructor inside interface in Java.
+                </li>
+              </ul>
           </li>
-          <li> Optional − special wrapper class used for expressing optionality</li>
-          <li> Functional Interface – an interface with maximum one abstract method, implementation can be provided
-            using
-            a Lambda Expression</li>
-          <li> Default methods − give us the ability to add full implementations in interfaces besides abstract methods
+          <li>
+            Lambda Expressions − a new language feature allowing treating
+            actions as objects
           </li>
-          <li> Nashorn, JavaScript Engine − Java-based engine for executing and evaluating JavaScript code</li>
-          <li> Stream API − a special iterator class that allows processing collections of objects in a functional
-            manner
+          <li>
+            Method References − enable defining Lambda Expressions by referring
+            to methods directly using their names
+          </li>
+          <li>
+            Optional − special wrapper class used for expressing optionality
+          </li>
+          <li>
+            Functional Interface – an interface with maximum one abstract
+            method, implementation can be provided using a Lambda Expression
+          </li>
+          <li>
+            Default methods − give us the ability to add full implementations in
+            interfaces besides abstract methods
+          </li>
+          <li>
+            Nashorn, JavaScript Engine − Java-based engine for executing and
+            evaluating JavaScript code
+          </li>
+          <li>
+            Stream API − a special iterator class that allows processing
+            collections of objects in a functional manner
           </li>
           <li>Date API − an improved, immutable JodaTime-inspired Date API</li>
-          <li> Along with these new features, lots of feature enhancements are done under-the-hood, at both compiler and
-            JVM level.</li>
+          <li>
+            Along with these new features, lots of feature enhancements are done
+            under-the-hood, at both compiler and JVM level.
+          </li>
         </ul>
       </div>
     </div>
 
-
-
     <div class="card-header">
       <h5 class="mb-0">
-        <button class="btn btn-link text-left" type="button" (click)="headingTwo = !headingTwo">
-          What is a functional interface? What are the rules of defining a functional interface?
+        <button
+          class="btn btn-link text-left"
+          type="button"
+          (click)="headingTwo = !headingTwo"
+        >
+          What is a functional interface? What are the rules of defining a
+          functional interface?
         </button>
       </h5>
     </div>
-    <div [ngClass]="{'show': headingTwo}" class="collapse">
+    <div [ngClass]="{ show: headingTwo }" class="collapse">
       <div class="card-body">
         <ul class="list-group-item-info">
-          <p>-> A functional interface is an interface with no more, no less but one single abstract method (default
-            methods
-            do not count).</p>
+          <p>
+            -> A functional interface is an interface with no more, no less but
+            one single abstract method (default methods do not count).
+          </p>
 
-          <p>-> Where an instance of such interface is required, a Lambda Expression can be used instead. More formally
-            put:
-            Functional interfaces provide target types for lambda expressions and method references.</p>
+          <p>
+            -> Where an instance of such interface is required, a Lambda
+            Expression can be used instead. More formally put: Functional
+            interfaces provide target types for lambda expressions and method
+            references.
+          </p>
 
-          <p>-> The arguments and return type of such expression directly match those of the single abstract method.</p>
+          <p>
+            -> The arguments and return type of such expression directly match
+            those of the single abstract method.
+          </p>
 
-          <p>-> For instance, the Runnable interface is a functional interface, can be writern as</p>
+          <p>
+            -> For instance, the Runnable interface is a functional interface,
+            can be writern as
+          </p>
           <code>
-            Thread thread = new Thread(() -> System.out.println("Hello World!"));</code>
+            Thread thread = new Thread(() -> System.out.println("Hello
+            World!"));</code
+          >
         </ul>
       </div>
     </div>
 
-
-
-
     <div class="card-header">
       <h5 class="mb-0">
-        <button class="btn btn-link text-left" type="button" (click)="headingThree = !headingThree">
+        <button
+          class="btn btn-link text-left"
+          type="button"
+          (click)="headingThree = !headingThree"
+        >
           What is the difference between Collection and Stream?
         </button>
       </h5>
     </div>
-    <div [ngClass]="{'show': headingThree}" class="collapse">
+    <div [ngClass]="{ show: headingThree }" class="collapse">
       <div class="card-body">
         <ul class="list-group-item-info">
           <p>
-            The main difference between a Collection and Stream is that Collection contains their elements but Stream
-            doesn't. Stream work on a view where elements are actually stored by Collection or array, but unlike other
-            views, any change made on Stream doesn't reflect on original collection.</p>
+            The main difference between a Collection and Stream is that
+            Collection contains their elements but Stream doesn't. Stream work
+            on a view where elements are actually stored by Collection or array,
+            but unlike other views, any change made on Stream doesn't reflect on
+            original collection.
+          </p>
         </ul>
       </div>
     </div>
 
-
-
     <div class="card-header">
       <h5 class="mb-0">
-        <button class="btn btn-link text-left" type="button" (click)="four = !four">
+        <button
+          class="btn btn-link text-left"
+          type="button"
+          (click)="four = !four"
+        >
           What does flatmap() function do? why you need it?
         </button>
       </h5>
     </div>
-    <div [ngClass]="{'show': four}" class="collapse">
+    <div [ngClass]="{ show: four }" class="collapse">
       <div class="card-body">
         <ul class="list-group-item-info">
           <p>
-            The flatmap function is an extension of the map function. Apart from transforming one object into another,
-            it can also flatten it.
-
-            For example, if you have a list of the list but you want to combine all elements of lists into just one
-            list. In this case, you can use flatMap() for flattening. At the same time, you can also transform an object
-            like you do use map() function.</p>
+            The flatmap function is an extension of the map function. Apart from
+            transforming one object into another, it can also flatten it. For
+            example, if you have a list of the list but you want to combine all
+            elements of lists into just one list. In this case, you can use
+            flatMap() for flattening. At the same time, you can also transform
+            an object like you do use map() function.
+          </p>
         </ul>
       </div>
     </div>
 
-
     <div class="card-header">
       <h5 class="mb-0">
-        <button class="btn btn-link text-left" type="button" (click)="five = !five">
+        <button
+          class="btn btn-link text-left"
+          type="button"
+          (click)="five = !five"
+        >
           What is difference between findFirst() and findAny() method?
         </button>
       </h5>
     </div>
-    <div [ngClass]="{'show': five}" class="collapse">
+    <div [ngClass]="{ show: five }" class="collapse">
       <div class="card-body">
         <ul class="list-group-item-info">
           <p>
-            The findFirst() method will return the first element meeting the criterion i.e. Predicate while findAny()
-            method will return any element meeting the criterion, very useful while working with a parallel stream. You
-            can further see this article for a working example of findFirst() method in Java 8.</p>
+            The findFirst() method will return the first element meeting the
+            criterion i.e. Predicate while findAny() method will return any
+            element meeting the criterion, very useful while working with a
+            parallel stream. You can further see this article for a working
+            example of findFirst() method in Java 8.
+          </p>
         </ul>
       </div>
     </div>
-
 
     <div class="card-header">
       <h5 class="mb-0">
-        <button class="btn btn-link text-left" type="button" (click)="six = !six">
-          What is the parallel Stream? How can you get a parallel stream from a List?
+        <button
+          class="btn btn-link text-left"
+          type="button"
+          (click)="six = !six"
+        >
+          What is the parallel Stream? How can you get a parallel stream from a
+          List?
         </button>
       </h5>
     </div>
-    <div [ngClass]="{'show': six}" class="collapse">
+    <div [ngClass]="{ show: six }" class="collapse">
       <div class="card-body">
         <ul class="list-group-item-info">
           <p>
-            A parallel stream can parallel execute stream processing task. For example, if you have a parallel stream of
-            1 million orders and you are looking for orders worth more than 1 million then you can use a filter to do
-            that.</p>
+            A parallel stream can parallel execute stream processing task. For
+            example, if you have a parallel stream of 1 million orders and you
+            are looking for orders worth more than 1 million then you can use a
+            filter to do that.
+          </p>
 
-          <p>Unlike sequential Stream, the parallel stream can launch multiple threads to search for those orders on the
-            different part of Stream and then combine the result.</p>
+          <p>
+            Unlike sequential Stream, the parallel stream can launch multiple
+            threads to search for those orders on the different part of Stream
+            and then combine the result.
+          </p>
 
-          <p>In short, the parallel stream can paralyze execution but, as Cay S. Horstman mentioned in Core Java SE 9
-            for the Impatient, there is significant overhead or parallelism which only pays off if you are doing bulk
-            data operation.</p>
+          <p>
+            In short, the parallel stream can paralyze execution but, as Cay S.
+            Horstman mentioned in Core Java SE 9 for the Impatient, there is
+            significant overhead or parallelism which only pays off if you are
+            doing bulk data operation.
+          </p>
         </ul>
       </div>
     </div>
 
     <div class="card-header">
-        <h5 class="mb-0">
-          <button class="btn btn-link text-left" type="button" (click)="seven = !seven">
-            What is the contract between hashCode() and equals() method
-          </button>
-        </h5>
+      <h5 class="mb-0">
+        <button
+          class="btn btn-link text-left"
+          type="button"
+          (click)="seven = !seven"
+        >
+          What is the contract between hashCode() and equals() method
+        </button>
+      </h5>
+    </div>
+    <div [ngClass]="{ show: seven }" class="collapse">
+      <div class="card-body">
+        <ul class="list-group-item-info">
+          <p>
+            1) If two objects are equal, then they must have the same hash
+            code.<br />
+            2) If two objects have the same hash code, they may or may not be
+            equal.
+          </p>
+        </ul>
       </div>
-      <div [ngClass]="{'show': seven}" class="collapse">
-        <div class="card-body">
-          <ul class="list-group-item-info">
-            <p>
-                1) If two objects are equal, then they must have the same hash code.<br>
-                2) If two objects have the same hash code, they may or may not be equal.
-              </p>
-          </ul>
-        </div>
+    </div>
+
+    <div class="card-header">
+      <h5 class="mb-0">
+        <button
+          class="btn btn-link text-left"
+          type="button"
+          (click)="eight = !eight"
+        >
+          What is the method overriding rules ?
+        </button>
+      </h5>
+    </div>
+    <div [ngClass]="{ show: eight }" class="collapse">
+      <div class="card-body">
+        <ul class="list-group-item-info">
+          <li>
+            In java, a method can only be written in Subclass, not in same
+            class.
+          </li>
+          <li>
+            The argument list should be exactly the same as that of the
+            overridden method.
+          </li>
+          <li>
+            The return type should be the same or a subtype of the return type
+            declared in the original overridden method in the super class.
+          </li>
+          <li>
+            The access level cannot be more restrictive than the overridden
+            method’s access level. For example: if the super class method is
+            declared public then the over-ridding method in the sub class cannot
+            be either private or protected.
+          </li>
+          <li>
+            Instance methods can be overridden only if they are inherited by the
+            subclass.
+          </li>
+          <li>A method declared final cannot be overridden.</li>
+          <li>
+            A method declared static cannot be overridden but can be
+            re-declared.
+          </li>
+          <li>If a method cannot be inherited then it cannot be overridden.</li>
+          <li>
+            A subclass within the same package as the instance’s superclass can
+            override any superclass method that is not declared private or
+            final.
+          </li>
+          <li>
+            A subclass in a different package can only override the non-final
+            methods declared public or protected.
+          </li>
+          <li>
+            An overriding method can throw any uncheck exceptions, regardless of
+            whether the overridden method throws exceptions or not.
+          </li>
+          <li>
+            However the overriding method should not throw checked exceptions
+            that are new or broader than the ones declared by the overridden
+            method. The overriding method can throw narrower or fewer exceptions
+            than the overridden method.
+          </li>
+          <li>Constructors cannot be overridden.</li>
+        </ul>
       </div>
-
-
- 
+    </div>
+  </div>
 </div>
-</div>
-
 
 <p>This is the <code>Panel</code> constructor:</p>
 <pre><code>function Panel(element, canClose, closeHandler) {{ '{' }}
